@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block conenido %}
+
+{% load crispy_forms_tags %}
+<br>
+<div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h2>agrega personaje</h2>
+                <hr>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ formdos | crispy }}
+                    <br>
+                    <button id="btnCancelar" href="{% url 'home' %}" class="btn btn-secondary" type="reset">Cancelar</button>
+                    &nbsp;
+                    <button id="btnEnviar" class="btn btn-primary" type="submit">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+{{ mensaje }}
+{% endblock %}

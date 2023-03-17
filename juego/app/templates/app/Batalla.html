@@ -1,0 +1,41 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block conenido %}
+
+{% load crispy_forms_tags %}
+<br>
+<!DOCTYPE html>
+<head>
+    <script src="{% static 'app/js/movimientos.js' %}" ></script>
+    <link rel="stylesheet" href="{% static 'app/css/main.css' %}"/>
+</head>
+<div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h2>agrega inventario</h2>
+                <hr>
+                <form action="" method="POST" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    <br>
+                    <body>
+                        <div id="Claash" class="Claash" >
+                            <img src="{% static 'app/personaje/oops-clash-royale-z9ty82ux824fauhi.gif' %}" width="500" height="300">
+                        </div>
+                    </body>
+                    <br>
+                    <button id="btnCancelar" href="{% url 'home' %}" class="btn btn-secondary" type="reset">Cancelar</button>
+                    &nbsp;
+                    <button id="btnEnviar" class="btn btn-primary" type="submit">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+{% endblock %}
+<br>
+</html>

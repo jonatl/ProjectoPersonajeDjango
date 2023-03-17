@@ -1,0 +1,63 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+{% endblock %}
+
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+{% endblock %}
+
+{% block conenido %}
+
+{% load crispy_forms_tags %}
+<html>
+<div id="contenido">
+    <div class="slider">
+        <div>
+            <img src="{% static 'app/img/banner/gearsbaner.jpg' %}" alt="">
+        </div>
+        <div>
+            <img src="{% static 'app/img/banner/halobaner.jpeg' %}" alt="">
+        </div>
+        <div>
+            <img src="{% static 'app/img/banner/codbanner.jpg' %}" alt="">
+        </div>  
+    </div>
+
+<div class="card">
+    <div class="card body">
+        <h2>Listado de productos</h2>
+    </div>
+</div>
+    <table class="table table-striped table-hover table-responsive-sm" >
+        <tr>
+            <th>name</th>
+            <th>nivel</th>
+            <th>vida</th>
+            <th>resitencia</th>
+            <th>fuerza</th>
+            <th>daño</th>
+            <th>tipo</th>
+        </tr>
+        <br>
+
+        {% for l in Personajes %}
+        <tr>
+            <img src="{{ l.img.url }}"; alt="Imagen_personaje" width="150",hight="150" style="align-self:auto;" >
+            <td>{{ l.name | title }}</td>
+            <td>{{ l.nivel | title }}</td>
+            <td>{{ l.vida | title }}</td>
+            <td>{{ l.resistencia | title }}</td>
+            <td>{{ l.fuerza | title }}</td>
+            <td>{{ l.daño | title }}</td>
+            <td>{{ l.tipo | title }}</td>
+        </tr>
+        {% endfor %}
+            <br>
+        </table>
+    </div>
+    {% endblock %}
+</div>
